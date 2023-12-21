@@ -16,7 +16,7 @@ import subprocess
 from DDoS_Attack import DdosAttack
 from deadman_switch import DeadmanSwitch
 from honeypot import Honeypot
-from ids_rule import IDSRule
+from ids_rules import ids_rules
 
 class SocketWrapper:
     class Honeypot:
