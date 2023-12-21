@@ -1,3 +1,5 @@
+#Module to be imported to conduct the DDoS Attacks.
+
 import subprocess
 import time
 from scapy.all import sniff  # Add missing import statement
