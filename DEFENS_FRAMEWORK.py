@@ -11,11 +11,13 @@
 #######################################################################################################################
 
 import socket
-from SocketWrapper import SocketWrapper as SocketWrapper
-from DDoS_Attack import DDoS_Attack as DDoS_Attack 
-from ids_rule import ids_rules as ids_rules
+import datetime as dt_module_custom
+import threading as threading
+import logging.handlers as handlers
+from DDoS_Attack import DDoS_Attack
+from ids_rule import ids_rules as ids_rules 
 from deadman_switch import DeadmanSwitch
-from Honeypot import Honeypot
+from Honeypot import Honeypot as Honeypot
 
 class Honeypot:
     def __init__(self, host, port):
@@ -53,4 +55,3 @@ class Honeypot:
         self.build_ids()
         self.import_modules()
         self.import_deadman_switch()
-
