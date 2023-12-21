@@ -1,4 +1,4 @@
-###########THE DEFENS FRAMEWORK IS UNDERDEVELOPMENT!!!!!!!!!!!#################################################
+###########THE DEFENS FRAMEWORK IS UNDERDEVELOPMENT!!!!!!!!!!!
 #THE DEFENS Framework
 
 #The DEFENS Framework is a framework that is used to defend against cyber attacks.
