@@ -26,3 +26,4 @@ ids_rules = [
         "severity": "low"
     }
 ]
+
