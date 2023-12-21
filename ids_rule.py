@@ -1,4 +1,4 @@
-##load your ids rules here in this format of python json
+##load your ids rules here in this format of python/json
 
 ids_rules = [
     {
