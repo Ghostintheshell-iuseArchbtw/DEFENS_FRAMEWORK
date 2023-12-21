@@ -1,0 +1,10 @@
+# FILEPATH
+
+"""
+This document is used to store IP addresses for honey pots. 
+The DEFENS framework can call on these IP addresses for defensive purposes.
+"""
+
+# Code for storing IP addresses in the document goes here...
+0.0.0.0   localhost
+
