@@ -2,7 +2,7 @@
 
 import subprocess
 import time
-from scapy.all import sniff  # Add missing import statement
+from scapy.all import sniff  
 
 class DDoS_Attack:
     def __init__(self, target_ip, target_port):
@@ -45,3 +45,4 @@ if __name__ == "__main__":
     attack.analyze_traffic()
     attack.stop_attack()
     attack.report_results()
+
