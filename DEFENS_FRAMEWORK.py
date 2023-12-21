@@ -10,10 +10,8 @@
 ##########YOU HAVE BEEN WARNED,ONLY USE IN AN ETHICAL MANNER WITH REGARD TO YOUR LOCAL LAWS############################
 #######################################################################################################################
 
-import socket
-import datetime as dt_module_custom
+import socket as socket
 import threading as threading
-import logging.handlers as handlers
 from DDoS_Attack import DDoS_Attack
 from ids_rule import ids_rules as ids_rules 
 from deadman_switch import DeadmanSwitch
@@ -55,3 +53,5 @@ class Honeypot:
         self.build_ids()
         self.import_modules()
         self.import_deadman_switch()
+
+
