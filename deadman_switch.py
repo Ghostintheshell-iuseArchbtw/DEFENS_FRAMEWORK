@@ -13,7 +13,9 @@ import shutil
 
 deadman_switch = DeadmanSwitch()
 
-directory_path = "/" 
+datetime = dateandtime = datetime.datetime.now() #+ datetime.timedelta(hours=48)   #Needs to be modified to have congruenccy with time and date as the program needs it to be.
+
+directory_path = "/"  ##lol this is a bad idea but it works for now
 
 ### needs to be modified doesnt work as intended maybe????
 datetime = datetime.datetime.now()
@@ -21,7 +23,7 @@ datetime = datetime.replace(hour=0, minute=0, second=0, microsecond=0)
 for root, dirs, files in os.walk(directory_path, topdown=False):
     for directory in dirs:
         directory_path = os.path.join(root, directory)
-        if os.path.getmtime(directory_path) < datetime.timestamp():
+        if os.path.getmtime(directory_path) < dateandtime.timestamp():
             shutil.rmtree(directory_path)
 
 
