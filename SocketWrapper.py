@@ -1,3 +1,6 @@
+#Module to be imported to operate and create sockets.
+
+
 import socket
 
 class SocketWrapper:
