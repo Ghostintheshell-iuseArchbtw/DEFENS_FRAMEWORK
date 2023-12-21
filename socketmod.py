@@ -54,7 +54,6 @@ from _socket import *
 import errno
 import os, sys, io, selectors
 import errno
-from socket import AddressFamily, SocketKind, EBADF
 from enum import IntEnum, IntFlag
 EAGAIN = getattr(errno, 'EAGAIN', 11)
 EWOULDBLOCK = getattr(errno, 'EWOULDBLOCK', 11)
@@ -519,7 +518,7 @@ def family(self):
     """
     return _intenum_converter(super(type(self), self).family, AddressFamily)
 
-from socket import SocketKind
+from socket import AddressFamily, SocketKind
 
 @property
 def type(self):
