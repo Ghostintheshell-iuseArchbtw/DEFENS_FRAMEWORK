@@ -19,20 +19,26 @@ from honeypot import Honeypot
 from ids_rule import IDSRule
 
 class SocketWrapper:
-    def __init__(self, host, port):
-        self.host = host
-        self.port = port
-        self.socket = None
+    class DefenseFramework:
+        class SocketWrapper:
+            def __init__(self, host, port):
+                self.host = host
+                self.port = port
+                self.socket = None
 
-    def connect(self):
-        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.socket.connect((self.host, self.port))
+            def connect(self):
+                self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                self.socket.connect((self.host, self.port))
 
-    def send(self, data):
-        self.socket.sendall(data.encode())
+            def send(self, data):
+                self.socket.sendall(data.encode())
 
-    def receive(self, buffer_size):
-        return self.socket.recv(buffer_size).decode()
+            def receive(self, buffer_size):
+                return self.socket.recv(buffer_size).decode()
+
+        def __init__(self):
+            self.honeypots = []
+            self.ids_rules = []
 
     def close(self):
         self.socket.close()
@@ -99,24 +105,4 @@ class DefenseFramework:
         self.build_ids()
         self.import_modules()
         self.import_deadman_switch()
-
-class Honeypot:      
-    def __init__(self, ip_address, port):
-        self.ip_address = ip_address
-        self.port = port
-        self.logged_connections = []
-
-    def log_connection(self, ip_address):
-        self.logged_connections.append(ip_address)
-
-    def has_connection_from(self, ip_address):
-        return ip_address in self.logged_connections
-
-class IDSRule:
-    def __init__(self, ip_address, action):
-        self.ip_address = ip_address
-        self.action = action
-
-# Create an instance of the DefenseFramework class and run the framework
-defense_framework = DefenseFramework()
-defense_framework.run()
+        
