@@ -19,8 +19,7 @@ from honeypot import Honeypot
 from ids_rule import IDSRule
 
 class SocketWrapper:
-    class DefenseFramework:
-        class SocketWrapper:
+    class Honeypot:
             def __init__(self, host, port):
                 self.host = host
                 self.port = port
@@ -36,12 +35,12 @@ class SocketWrapper:
             def receive(self, buffer_size):
                 return self.socket.recv(buffer_size).decode()
 
-        def __init__(self):
-            self.honeypots = []
-            self.ids_rules = []
-
-    def close(self):
-        self.socket.close()
+            def __init__(self):
+                self.honeypots = []
+                self.ids_rules = []
+            
+            def close(self):
+                self.socket.close()
 
 class DdosAttack(threading.Thread):
     def __init__(self, target_ip, target_port, attacker_ip, attacker_port, num_threads, num_requests):
@@ -105,4 +104,3 @@ class DefenseFramework:
         self.build_ids()
         self.import_modules()
         self.import_deadman_switch()
-        
