@@ -1,5 +1,7 @@
 ##load your ids rules here in this format of python/json
 
+import ids_rules as rules  
+
 ids_rules = [
     {
         "rule_id": 1,
