@@ -1,3 +1,5 @@
+#Module to be imported to operate the Deadmans Switch.
+
 import os
 import logging
 import getpass
