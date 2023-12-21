@@ -1,7 +1,28 @@
 ##module to be imported to run to build and start honeypots.
 
+##module to be imported to run to build and start honeypots.
+
 import socket
 import threading
+
+class Honeypot:
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
+        self.socket = None
+
+    def connect(self):
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.socket.connect((self.host, self.port))
+
+    def send(self, data):
+        self.socket.sendall(data.encode())
+
+    def receive(self, buffer_size):
+        return self.socket.recv(buffer_size).decode()
+
+    def close(self):
+        self.socket.close()
 
 def handle_connection(client_socket, client_address):
     print(f'Connection attempt from: {client_address[0]}:{client_address[1]}')
