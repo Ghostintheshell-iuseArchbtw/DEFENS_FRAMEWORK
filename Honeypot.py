@@ -1,7 +1,5 @@
 ##module to be imported to run to build and start honeypots.
 
-##module to be imported to run to build and start honeypots.
-
 import socket
 import threading
 
